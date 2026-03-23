@@ -1,23 +1,35 @@
 export default function Reviews() {
-    return (
-      <main className="catalog">
-        <h1>Customer Reviews</h1>
-  
-        <div className="review">
-          <p>"Amazing desserts! Highly recommend!"</p>
-          <strong>- Laura</strong>
-        </div>
-  
-        <div className="review">
-          <p>"The cupcakes were beautiful and delicious."</p>
-          <strong>- Miguel</strong>
-        </div>
-  
-        <div className="review">
-          <p>"Best sweets marketplace ever!"</p>
-          <strong>- Sofia</strong>
-        </div>
-      </main>
-    );
-  }
-  
+  const reviews = [
+    {
+      user: "Laura",
+      comment: "Amazing desserts! Highly recommend!",
+      rating: "⭐⭐⭐⭐⭐",
+    },
+    {
+      user: "Miguel",
+      comment: "The cupcakes were beautiful and delicious.",
+      rating: "⭐⭐⭐⭐⭐",
+    },
+    {
+      user: "Sofia",
+      comment: "Best sweets marketplace ever!",
+      rating: "⭐⭐⭐⭐",
+    },
+  ];
+
+  return (
+    <main className="page">
+      <h1 className="title">Customer Reviews ⭐</h1>
+
+      <div className="grid">
+        {reviews.map((review, i) => (
+          <div key={i} className="card">
+            <h3>{review.user}</h3>
+            <p>"{review.comment}"</p>
+            <p>{review.rating}</p>
+          </div>
+        ))}
+      </div>
+    </main>
+  );
+}
