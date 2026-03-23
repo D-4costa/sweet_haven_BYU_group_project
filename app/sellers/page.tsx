@@ -1,25 +1,35 @@
 export default function Sellers() {
-    return (
-      <main className="catalog">
-        <h1>Featured Bakers</h1>
-  
-        <div className="grid">
-          <div className="card">
-            <h3>Maria's Cakes</h3>
-            <p>Specializes in strawberry and wedding cakes.</p>
+  const sellers = [
+    {
+      name: "Maria Lopez",
+      specialty: "Cakes",
+      rating: "⭐ 4.9",
+    },
+    {
+      name: "John Kim",
+      specialty: "Macarons",
+      rating: "⭐ 4.8",
+    },
+    {
+      name: "Ana Torres",
+      specialty: "Cupcakes",
+      rating: "⭐ 5.0",
+    },
+  ];
+
+  return (
+    <main className="page">
+      <h1 className="title">Our Bakers 👩‍🍳</h1>
+
+      <div className="grid">
+        {sellers.map((seller, i) => (
+          <div key={i} className="card">
+            <h3>{seller.name}</h3>
+            <p>Specialty: {seller.specialty}</p>
+            <p>{seller.rating}</p>
           </div>
-  
-          <div className="card">
-            <h3>Luna Bakery</h3>
-            <p>Known for colorful macarons and pastries.</p>
-          </div>
-  
-          <div className="card">
-            <h3>Sweet Daisy</h3>
-            <p>Handcrafted cupcakes and custom desserts.</p>
-          </div>
-        </div>
-      </main>
-    );
-  }
-  
+        ))}
+      </div>
+    </main>
+  );
+}
