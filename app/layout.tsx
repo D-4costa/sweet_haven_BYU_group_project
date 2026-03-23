@@ -8,7 +8,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className="layout">
         <header className="header">
           <div className="logo">🍰 Sweet Haven</div>
           <nav>
@@ -19,7 +19,9 @@ export default function RootLayout({
           </nav>
         </header>
 
-        {children}
+        <main className="main-content">
+          {children}
+        </main>
 
         <footer>
           <p>© 2026 Sweet Haven Marketplace</p>
