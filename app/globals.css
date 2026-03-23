@@ -5,6 +5,17 @@
   box-sizing: border-box;
 }
 
+/* ===== LAYOUT (FIX FOOTER) ===== */
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+}
+
 /* ===== BODY ===== */
 body {
   font-family: 'Poppins', sans-serif;
@@ -23,6 +34,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
+  backdrop-filter: blur(10px);
 }
 
 .logo {
@@ -37,11 +49,28 @@ nav a {
   text-decoration: none;
   font-weight: 600;
   color: #333;
-  transition: 0.3s;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
 nav a:hover {
   color: #ff4f87;
+}
+
+/* underline animation */
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background: #ff4f87;
+  transition: 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
 }
 
 /* ===== HERO ===== */
@@ -62,7 +91,19 @@ nav a:hover {
   opacity: 0.8;
 }
 
-/* BUTTON */
+/* ===== PAGE (NEW) ===== */
+.page {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.title {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #ff4f87;
+}
+
+/* ===== BUTTON ===== */
 .btn {
   display: inline-block;
   margin-top: 20px;
@@ -120,11 +161,11 @@ nav a:hover {
   border-radius: 18px;
   padding: 15px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-8px) scale(1.02);
+  transform: translateY(-8px) scale(1.03);
 }
 
 .card img {
@@ -144,7 +185,7 @@ nav a:hover {
   color: #ff4f87;
 }
 
-/* ===== FILTERS (NEW) ===== */
+/* ===== FILTERS ===== */
 .filters {
   display: flex;
   gap: 10px;
@@ -167,12 +208,17 @@ nav a:hover {
   border-color: #ff4f87;
 }
 
+/* ===== EMPTY STATE ===== */
+.empty {
+  margin-top: 20px;
+  opacity: 0.7;
+}
+
 /* ===== FOOTER ===== */
 footer {
   text-align: center;
   padding: 20px;
   background: #ffd6e7;
-  margin-top: 40px;
   font-size: 14px;
 }
 
