@@ -25,8 +25,8 @@ export default function Products() {
   });
 
   return (
-    <main className="catalog">
-      <h1>Dessert Catalog 🍰</h1>
+    <main className="page">
+      <h1 className="title">Dessert Catalog 🍰</h1>
 
       <div className="filters">
         <input
@@ -59,15 +59,10 @@ export default function Products() {
       <div className="grid">
         {filteredProducts.length > 0 ? (
           filteredProducts.map((item) => (
-            <ProductCard
-              key={item.id}
-              name={item.name}
-              price={item.price}
-              image={item.image}
-            />
+            <ProductCard key={item.id} {...item} />
           ))
         ) : (
-          <p>No desserts found 😢</p>
+          <p className="empty">No desserts found 😢</p>
         )}
       </div>
     </main>
