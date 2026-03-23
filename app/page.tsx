@@ -41,13 +41,13 @@ export default function Home() {
         <div className="grid">
           {/* CARD 1 */}
           <div className="card">
-            <Image
-              src="https://images.unsplash.com/photo-1505253716362-afaea6b1c3c2?w=600&auto=format"
-              alt="Strawberry Shortcake"
-              width={400}
-              height={250}
-              className="card-img"
-            />
+<Image
+  src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=600&auto=format"
+  alt="Strawberry Shortcake"
+  width={400}
+  height={250}
+  className="card-img"
+/>
             <h3>Strawberry Shortcake</h3>
             <p>$14</p>
           </div>
