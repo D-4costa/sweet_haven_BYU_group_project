@@ -4,67 +4,47 @@ import { useState } from "react";
 import { products } from "../data/products";
 import ProductCard from "../components/ProductCard";
 
-export default function Products() {
+export default function ProductsPage() {
   const [search, setSearch] = useState("");
-  const [priceFilter, setPriceFilter] = useState("all");
   const [category, setCategory] = useState("all");
 
-  const filteredProducts = products.filter((p) => {
-    const matchSearch = p.name.toLowerCase().includes(search.toLowerCase());
+  const filteredProducts = products.filter((product) => {
+    const matchesSearch = product.name
+      .toLowerCase()
+      .includes(search.toLowerCase());
 
-    const matchPrice =
-      priceFilter === "all" ||
-      (priceFilter === "low" && p.price < 10) ||
-      (priceFilter === "mid" && p.price >= 10 && p.price <= 15) ||
-      (priceFilter === "high" && p.price > 15);
+    const matchesCategory =
+      category === "all" || product.category === category;
 
-    const matchCategory =
-      category === "all" || p.category === category;
-
-    return matchSearch && matchPrice && matchCategory;
+    return matchesSearch && matchesCategory;
   });
 
   return (
-    <main className="page">
-      <h1 className="title">Dessert Catalog 🍰</h1>
+    <div>
+      <h1>Our Desserts</h1>
 
-      <div className="filters">
-        <input
-          placeholder="Search desserts..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
+      {/* SEARCH */}
+      <input
+        type="text"
+        placeholder="Search desserts..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
 
-        <select
-          value={priceFilter}
-          onChange={(e) => setPriceFilter(e.target.value)}
-        >
-          <option value="all">All Prices</option>
-          <option value="low">Under $10</option>
-          <option value="mid">$10 - $15</option>
-          <option value="high">$15+</option>
-        </select>
+      {/* FILTER */}
+      <select onChange={(e) => setCategory(e.target.value)}>
+        <option value="all">All</option>
+        <option value="cake">Cakes</option>
+        <option value="cookie">Cookies</option>
+        <option value="drink">Drinks</option>
+      </select>
 
-        <select
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-        >
-          <option value="all">All Categories</option>
-          <option value="cake">Cakes</option>
-          <option value="cupcake">Cupcakes</option>
-          <option value="premium">Premium</option>
-        </select>
-      </div>
-
+      {/* PRODUCTS */}
       <div className="grid">
-        {filteredProducts.length > 0 ? (
-          filteredProducts.map((item) => (
-            <ProductCard key={item.id} {...item} />
-          ))
-        ) : (
-          <p className="empty">No desserts found 😢</p>
-        )}
+        {filteredProducts.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
       </div>
-    </main>
+    </div>
   );
 }
