@@ -19,25 +19,42 @@ export default function ProductsPage() {
     return matchesSearch && matchesCategory;
   });
 
+  const resetFilters = () => {
+    setSearch("");
+    setCategory("all");
+  };
+
   return (
-    <div>
-      <h1>Our Desserts</h1>
+    <main className="page">
+      <h1 className="title">Our Desserts 🍰</h1>
 
-      {/* SEARCH */}
-      <input
-        type="text"
-        placeholder="Search desserts..."
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-      />
+      {/* FILTERS */}
+      <div className="filters">
+        <input
+          type="text"
+          placeholder="Search desserts..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
 
-      {/* FILTER */}
-      <select onChange={(e) => setCategory(e.target.value)}>
-        <option value="all">All</option>
-        <option value="cake">Cakes</option>
-        <option value="cookie">Cookies</option>
-        <option value="drink">Drinks</option>
-      </select>
+        <select
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+        >
+          <option value="all">All</option>
+          <option value="cake">Cakes</option>
+          <option value="cupcake">Cupcakes</option>
+          <option value="drink">Drinks</option>
+          <option value="premium">Premium</option>
+        </select>
+
+        <button onClick={resetFilters}>Reset</button>
+      </div>
+
+      {/* RESULTS COUNT */}
+      <p style={{ marginTop: "10px" }}>
+        {filteredProducts.length} desserts found
+      </p>
 
       {/* PRODUCTS */}
       <div className="grid">
@@ -45,6 +62,13 @@ export default function ProductsPage() {
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
-    </div>
+
+      {/* EMPTY STATE */}
+      {filteredProducts.length === 0 && (
+        <p className="empty">
+          No desserts found 😢 Try a different search or category.
+        </p>
+      )}
+    </main>
   );
 }
