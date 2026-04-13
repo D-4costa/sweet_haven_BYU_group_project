@@ -116,6 +116,6 @@ export const products = [
   name: "Hot Chocolate",
   price: 5,
   category: "drink",
-  image: "https://images.unsplash.com/photo-1606312619344-53f6c2b41a1c?w=600&auto=format&fit=crop",
+  image: "https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=600&q=80",
 }
 ];
