@@ -55,7 +55,6 @@ export const products = [
     category: "drink",
     image: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=600&auto=format",
   },
-
   {
     id: 9,
     name: "Red Velvet Cake",
@@ -63,31 +62,60 @@ export const products = [
     category: "cake",
     image: "https://images.unsplash.com/photo-1601972599720-36938d4ecd31?w=600&auto=format",
   },
-{
-  id: 10,
-  name: "Carrot Cake",
-  price: 13,
-  category: "cake",
-  image: "https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=600&auto=format&fit=crop",
-},
-{
-  id: 11,
-  name: "Oreo Cupcakes",
-  price: 10,
-  category: "cupcake",
-  image: "https://images.unsplash.com/photo-1559622214-f8a9850965bb?w=600&auto=format&fit=crop",
-},
-{
-  id: 14,
-  name: "Glazed Donuts",
-  price: 5,
-  category: "pastry",
-  image: "https://images.unsplash.com/photo-1505253758473-96b7015fcd40?w=600&auto=format&fit=crop",
-},
-{
-  id: 18,
-  name: "Hot Chocolate",
-  price: 5,
-  category: "drink",
-  image: "https://images.unsplash.com/photo-1542990253-0d5a84b89d6f?w=600&auto=format&fit=crop",
-}
+  {
+    id: 10,
+    name: "Carrot Cake",
+    price: 13,
+    category: "cake",
+    image: "https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=600&auto=format&fit=crop",
+  },
+  {
+    id: 11,
+    name: "Oreo Cupcakes",
+    price: 10,
+    category: "cupcake",
+    image: "https://images.unsplash.com/photo-1559622214-f8a9850965bb?w=600&auto=format&fit=crop",
+  },
+  {
+    id: 12,
+    name: "Chocolate Donuts",
+    price: 6,
+    category: "pastry",
+    image: "https://images.unsplash.com/photo-1542826438-bd32f43d626f?w=600&auto=format",
+  },
+  {
+    id: 13,
+    name: "Glazed Donuts",
+    price: 5,
+    category: "pastry",
+    image: "https://images.unsplash.com/photo-1505253758473-96b7015fcd40?w=600&auto=format&fit=crop",
+  },
+  {
+    id: 14,
+    name: "Tiramisu",
+    price: 17,
+    category: "premium",
+    image: "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=600&auto=format",
+  },
+  {
+    id: 15,
+    name: "Chocolate Brownie",
+    price: 7,
+    category: "pastry",
+    image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=600&auto=format",
+  },
+  {
+    id: 16,
+    name: "Matcha Latte",
+    price: 6,
+    category: "drink",
+    image: "https://images.unsplash.com/photo-1515823662972-da6a2e4d3002?w=600&auto=format",
+  },
+  {
+    id: 17,
+    name: "Hot Chocolate",
+    price: 5,
+    category: "drink",
+    image: "https://images.unsplash.com/photo-1542990253-0d5a84b89d6f?w=600&auto=format&fit=crop",
+  }
+];
