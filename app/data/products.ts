@@ -111,11 +111,11 @@ export const products = [
     category: "drink",
     image: "https://images.unsplash.com/photo-1515823662972-da6a2e4d3002?w=600&auto=format",
   },
-  {
-    id: 17,
-    name: "Hot Chocolate",
-    price: 5,
-    category: "drink",
-    image: "https://images.unsplash.com/photo-1542990253-0d5a84b89d6f?w=600&auto=format&fit=crop",
-  }
+{
+  id: 17,
+  name: "Hot Chocolate",
+  price: 5,
+  category: "drink",
+  image: "https://images.unsplash.com/photo-1606312619344-53f6c2b41a1c?w=600&auto=format&fit=crop",
+}
 ];
